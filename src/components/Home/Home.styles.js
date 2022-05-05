@@ -13,7 +13,7 @@ export const Caja = styled.div`
   grid-template-columns: 70px 220px 30px 200px 0;
   grid-template-rows: ${({ showme }) =>
     showme ? "70px 220px 30px 200px 0" : "70px 220px 30px 200px 0"};
-  height: ${({ currentPos, id }) => (currentPos === id ? "170px" : "70px")};
+  height: ${({ currentPos, id }) => (currentPos === id ? "200px" : "70px")};
   transition: all 0.5s;
   color: white;
   overflow: hidden;
@@ -154,37 +154,6 @@ export const More = styled.div`
     margin-left: 30px;
     margin-right: 10px;
     margin-bottom: 10px;
-  }
-`;
-
-export const Opciones = styled.div`
-  display: flex;
-  flex-direction: column;
-  color: white;
-  z-index: 1;
-  position: absolute;
-  top: 5em;
-  left: 10em;
-  button {
-    width: 100px;
-    height: 40px;
-    border-radius: 10px;
-    border: 1px solid rgb(60, 62, 68);
-    background-color: rgb(85, 204, 68);
-    color: rgb(255, 255, 255);
-    font-size: 1rem;
-    margin-top: 2px;
-    cursor: pointer;
-    transition: 0.5s;
-    &:focus {
-      transition: 0.5s;
-      outline: none;
-      box-shadow: 0 0 0 0.25em rgb(85, 204, 68, 0.5);
-    }
-  }
-  button:nth-child(5) {
-    background-color: rgb(214, 61, 46);
-    
   }
 `;
 

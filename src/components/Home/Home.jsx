@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Caja, Span, Container, Botones, More, Opciones } from "./Home.styles";
+import { Caja, Span, Container, Botones, More } from "./Home.styles";
 
 const Home = () => {
   const [items, setItems] = useState([]);
