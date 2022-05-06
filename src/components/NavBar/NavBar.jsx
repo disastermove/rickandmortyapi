@@ -4,7 +4,8 @@ const NavBar = () => {
   return (
     <>
       <NavBars>
-        <h1>Rick And Morty</h1>
+        <h1>
+        <a href="/">Rick And Morty</a></h1>
       </NavBars>
     </>
   );

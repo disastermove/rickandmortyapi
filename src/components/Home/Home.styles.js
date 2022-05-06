@@ -10,7 +10,7 @@ export const Caja = styled.div`
   margin-bottom: 10px;
   width: 500px;
   display: grid;
-  grid-template-columns: 70px 220px 30px 200px 0;
+  grid-template-columns: 70px 200px 125px 200px 0;
   grid-template-rows: ${({ showme }) =>
     showme ? "70px 220px 30px 200px 0" : "70px 220px 30px 200px 0"};
   height: ${({ currentPos, id }) => (currentPos === id ? "200px" : "70px")};
@@ -32,6 +32,12 @@ export const Caja = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  .hihi {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
   }
 `;
 
@@ -59,12 +65,15 @@ export const Botones = styled.button`
 `;
 
 export const Span = styled.span`
-  height: 0.5rem;
-  width: 0.5rem;
-
-  margin-right: 0.375rem;
-  background: rgb(85, 204, 68);
-  border-radius: 50%;
+  position: relative;
+  top: -10px;
+  font-size: 1rem;
+  margin: 0;
+  border-radius: 4px;
+  margin-top: 28px !important;
+  max-width: max-content;
+  padding: 5px;
+  height: max-content;
   background: ${({ alive }) =>
     alive === "Alive"
       ? "rgb(85, 204, 68)"
@@ -137,7 +146,7 @@ export const More = styled.div`
   color: white;
   position: relative;
   top: 5em;
-  left: -18em;
+  left: -25em;
   width: 100%;
   max-width: 1200px;
   strong {

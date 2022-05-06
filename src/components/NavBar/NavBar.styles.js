@@ -17,10 +17,15 @@ export const NavBars = styled.div`
     font-size: 1rem;
     font-weight: bold;
     padding: 0 10px;
+    outline: none;
     h1 {
         font-size: 1.5rem;
         font-weight: bold;
         color: rgb(255, 255, 255);
-        margin: 0;
+        margin: 0;outline: none;
+    }
+    a{
+        text-decoration: none;
+        color: rgb(255, 255, 255);outline: none;    
     }
 `;
