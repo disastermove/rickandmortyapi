@@ -1,46 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
 
-export const Caja = styled.div`
-  background-color: rgb(60, 62, 68);
-  box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px,
-    rgb(0 0 0 / 6%) 0px 2px 4px -1px;
-  border-radius: 10px;
-  margin: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 500px;
-  display: grid;
-  grid-template-columns: 70px 200px 125px 200px 0;
-  grid-template-rows: ${({ showme }) =>
-    showme ? "70px 220px 30px 200px 0" : "70px 220px 30px 200px 0"};
-  height: ${({ currentPos, id }) => (currentPos === id ? "200px" : "70px")};
-  transition: all 0.5s;
-  color: white;
-  overflow: hidden;
-  h2 {
-    font-size: 1.3rem;
-    margin: 0;
-    margin-left: 20px;
-    margin-top: 20px;
-  }
-  span {
-    font-size: 1rem;
-    margin: 0;
-    margin-top: 28px !important;
-  }
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .hihi {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 1rem;
-  }
-`;
-
 export const Botones = styled.button`
   display: inline-block;
   background-color: rgb(60, 62, 68);
@@ -176,15 +135,16 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Roboto', sans-serif;
     }
     ::-webkit-scrollbar {
-        width: 5px;
-    }
-    ::-webkit-scrollbar-track {
-        background: rgb(36, 40, 47);
+      width: 16px;
     }
     ::-webkit-scrollbar-thumb {
-        background: rgba(84, 204, 68, 0.5); border-radius: 50px;
+      height: 56px;
+      border-radius: 8px;
+      border: 4px solid transparent;
+      background-clip: content-box;
+      background-color: #606060;
     }
     ::-webkit-scrollbar-thumb:hover {
-        background: rgb(85, 204, 68);
+      background-color: #909090;
     }
 `;

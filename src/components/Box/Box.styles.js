@@ -10,10 +10,10 @@ export const Caja = styled.div`
   margin-bottom: 10px;
   width: 500px;
   display: grid;
-  grid-template-columns: 70px 200px 125px 200px 0;
+  grid-template-columns: 70px 220px 125px 200px 0;
   grid-template-rows: ${({ showme }) =>
     showme ? "70px 220px 30px 200px 0" : "70px 220px 30px 200px 0"};
-  height: ${({ currentPos, id }) => (currentPos === id ? "200px" : "70px")};
+  height: ${({ showme }) => (showme ? "200px" : "70px")};
   transition: all 0.5s;
   color: white;
   overflow: hidden;
@@ -67,6 +67,8 @@ export const More = styled.div`
   color: white;
   position: relative;
   top: 5em;
+  opacity: ${({ showme }) => (showme ? "0" : "1")};
+  transition: all 0.5s;
   left: -25em;
   width: 100%;
   max-width: 1200px;

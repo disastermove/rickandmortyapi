@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Container } from "./Home.styles";
-import { getPeople } from "../../services/api";
+import { Container, Botones } from "./Home.styles";
+import { getCharacter, getPage } from "../../services/api";
 import Box from "../Box";
 
 const Home = () => {
   const [items, setItems] = useState([]);
 
+  const [page, setPage] = useState(1);
   const [busqueda, setBusqueda] = useState("");
 
   useEffect(() => {
@@ -13,12 +14,25 @@ const Home = () => {
   }, []);
 
   const Busqueda = () => {
-    getPeople(busqueda).then((res) => {
+    getCharacter(busqueda).then((res) => {
       setItems(res.data.results);
     });
     if (busqueda !== "") {
       setItems([]);
     }
+  };
+
+  const Next = () => {
+    setPage(page + 1);
+    getPage(page + 1).then((res) => {
+      setItems(res.data.results);
+    });
+  };
+  const Prev = () => {
+    setPage(page - 1 );
+    getPage(page - 1).then((res) => {
+      setItems(res.data.results);
+    });
   };
 
   return (
@@ -45,6 +59,20 @@ const Home = () => {
         {items.map((item) => (
           <Box item={item}></Box>
         ))}
+        <div className="pagination">
+          <Botones
+            style={{ borderRadius: "10px 0 0 10px" }}
+            onClick={() => Prev()}
+          >
+            Anterior
+          </Botones>
+          <Botones
+            style={{ borderRadius: "0 10px 10px 0" }}
+            onClick={() => Next()}
+          >
+            Siguiente
+          </Botones>
+        </div>
         <p>Rick And Morty</p>
       </Container>
     </>

@@ -4,14 +4,11 @@ import { Caja, Span, More } from "./Box.styles";
 const Box = ({ item }) => {
   const [showmoreinfo, setShowmoreinfo] = useState(false);
 
-  const [currentPos, setCurrentPos] = useState(0);
   return (
     <>
       <Caja
-        id={item.id}
-        currentPos={currentPos}
+        showme={showmoreinfo}
         onClick={() => {
-          setCurrentPos(item.id);
           setShowmoreinfo(!showmoreinfo);
         }}
       >
