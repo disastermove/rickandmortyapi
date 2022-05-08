@@ -17,6 +17,7 @@ export const Caja = styled.div`
   transition: all 0.5s;
   color: white;
   overflow: hidden;
+  cursor: pointer;
   h2 {
     font-size: 1.3rem;
     margin: 0;
