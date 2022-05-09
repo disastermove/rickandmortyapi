@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Container, Botones } from "./Home.styles";
-import { getCharacter, getPage } from "../../services/api";
+import { Container, Botones } from "./Home.styles"; // styles
+import { getCharacter, getPage } from "../../services/api"; // promesa
 import Box from "../Box";
 
 const Home = () => {
@@ -10,12 +10,15 @@ const Home = () => {
   const [busqueda, setBusqueda] = useState("");
 
   useEffect(() => {
+    console.log("Cargando...");
     Busqueda();
-    console.log('Cargando...');
   }, []);
+
+  // intentar bajar lineas de codigo
 
   const Busqueda = () => {
     getCharacter(busqueda).then((res) => {
+      console.log(res);
       setItems(res.data.results);
     });
     if (busqueda !== "") {
@@ -30,7 +33,7 @@ const Home = () => {
     });
   };
   const Prev = () => {
-    setPage(page - 1 );
+    setPage(page - 1);
     getPage(page - 1).then((res) => {
       setItems(res.data.results);
     });

@@ -15,11 +15,12 @@ export const Botones = styled.button`
   font-weight: bold;
   outline: none;
   transition: all 0.5s;
-
   &:focus {
     outline: none;
     transition: all 0.5s;
     box-shadow: 0 0 0 0.2rem rgb(60 191 143 / 15%);
+    position: relative;
+    z-index: 2;
   }
 `;
 
@@ -55,7 +56,6 @@ export const Container = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
     input {
       width: 300px;
       height: 40px;
