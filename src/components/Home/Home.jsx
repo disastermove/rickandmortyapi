@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Botones } from "./Home.styles"; // styles
-import { getCharacter, getPage } from "../../services/api"; // promesa
+import { getCharacter, getCharacterAndPage } from "../../services/api"; // promesa
 import Box from "../Box";
 
 const Home = () => {
@@ -28,13 +28,16 @@ const Home = () => {
 
   const Next = () => {
     setPage(page + 1);
-    getPage(page + 1).then((res) => {
+    getCharacterAndPage(busqueda, page + 1).then((res) => {
+      console.log(res);
       setItems(res.data.results);
     });
   };
+
   const Prev = () => {
     setPage(page - 1);
-    getPage(page - 1).then((res) => {
+    getCharacterAndPage(busqueda, page - 1).then((res) => {
+      console.log(res);
       setItems(res.data.results);
     });
   };
@@ -46,7 +49,9 @@ const Home = () => {
           <input
             type="text"
             placeholder="Buscar personaje"
-            onChange={(e) => setBusqueda(e.target.value)}
+            onChange={(e) => {
+              setBusqueda(e.target.value);
+            }}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
                 Busqueda();
